@@ -5,7 +5,7 @@ require 'rpio/i2c'
 require 'rpio/spi'
 require 'rpio/pwm'
 
-require 'rpio/stub_driver'
+require 'rpio/driver'
 
 module Rpio
   extend self
@@ -16,18 +16,19 @@ module Rpio
   # and use with all Rpio objects.
   #
   def driver=(klass)
-    if !klass.nil? && (klass <= Rpio::StubDriver::Base)
+    if !klass.nil? && (klass <= Rpio::Driver)
       @driver.close if @driver
       @driver = klass.new
     else
-      raise ArgumentError, 'Supply a Rpio::Driver::Base subclass for driver'
+      raise ArgumentError, 'Supply a Rpio::Driver subclass for driver'
     end
   end
 
   #Returns the loaded driver.
   #
   def driver
-    @driver ||= Rpio::StubDriver::Base.new
+    raise ArgumentError, 'Supply a Rpio::Driver subclass for driver' unless @driver
+    @driver
   end
 
   at_exit { driver.close }

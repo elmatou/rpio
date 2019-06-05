@@ -2,12 +2,12 @@ PATH
   remote: ../rpio-stub_driver
   specs:
     rpio-stub_driver (0.1.0)
+      rpio
 
 PATH
   remote: .
   specs:
     rpio (0.1.0)
-      rpio-stub_driver
 
 GEM
   remote: https://rubygems.org/

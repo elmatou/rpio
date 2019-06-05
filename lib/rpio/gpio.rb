@@ -68,12 +68,12 @@ module Rpio
                   :pull => :off,
                 }.merge(options)
 
-      raise ArgumentError, 'Pin # required' unless @options[:pin]
+      raise ArgumentError, 'Pin number is required.' unless @options[:pin]
 
       Rpio.driver.gpio_direction(@options[:pin], @options[:direction])
       Rpio.driver.gpio_set_trigger(@options[:pin], @options[:trigger])
       if @options[:direction] == :out && @options[:pull] != :off
-        raise ArgumentError, 'Unable to use pull-ups : pin direction must be :in for this'
+        raise ArgumentError, 'Unable to use pull-ups : pin direction must be :in for this.'
       else
         Rpio.driver.gpio_set_pud(@options[:pin], @options[:pull])
       end

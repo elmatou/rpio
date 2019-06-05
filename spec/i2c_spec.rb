@@ -24,7 +24,7 @@ RSpec.describe Rpio::I2C do
     end
   end
 
-  describe 'when in block' do
+  xdescribe 'when in block' do
     it 'should call i2c_begin' do
       expect(Rpio.driver).to receive(:i2c_begin)
       Rpio::I2C.begin {}
@@ -43,7 +43,7 @@ RSpec.describe Rpio::I2C do
       end
     end
 
-    describe 'write operation' do
+    xdescribe 'write operation' do
       it 'should set address' do
         expect(Rpio.driver).to receive(:i2c_set_address).with(4)
         Rpio::I2C.begin do

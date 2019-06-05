@@ -23,7 +23,6 @@ module Rpio
         Rpio.driver.i2c_end if ObjectSpace.each_object(self).count <= 0
       end
 
-
     end
 
     def initialize(address)
