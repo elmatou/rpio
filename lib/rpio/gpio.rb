@@ -1,7 +1,6 @@
 module Rpio
-  # Represents a GPIO pin on the Raspberry Pi
   class Gpio
-
+# TODO: Constant should go into drivers.
     GPIO_HIGH = 1
     GPIO_LOW  = 0
 

@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 RSpec.describe Rpio::Gpio do
 
   before(:context) do

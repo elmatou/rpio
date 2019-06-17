@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 RSpec.describe Rpio::PWM do
 
   before(:context) do

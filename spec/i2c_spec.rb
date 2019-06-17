@@ -1,5 +1,3 @@
-require_relative 'spec_helper'
-
 RSpec.describe Rpio::I2C do
 
   before(:context) do
